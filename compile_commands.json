@@ -1,0 +1,67 @@
+[
+ {
+  "directory": "/home/ss0/rpc_hello",
+  "arguments": [
+   "cc",
+   "-g",
+   "-I/usr/include/tirpc",
+   "-c",
+   "-o",
+   "hello_clnt.o",
+   "hello_clnt.c"
+  ],
+  "file": "hello_clnt.c"
+ },
+ {
+  "directory": "/home/ss0/rpc_hello",
+  "arguments": [
+   "cc",
+   "-g",
+   "-I/usr/include/tirpc",
+   "-c",
+   "-o",
+   "hello_client.o",
+   "hello_client.c"
+  ],
+  "file": "hello_client.c"
+ },
+ {
+  "directory": "/home/ss0/rpc_hello",
+  "arguments": [
+   "cc",
+   "-g",
+   "-I/usr/include/tirpc",
+   "-c",
+   "-o",
+   "hello_xdr.o",
+   "hello_xdr.c"
+  ],
+  "file": "hello_xdr.c"
+ },
+ {
+  "directory": "/home/ss0/rpc_hello",
+  "arguments": [
+   "cc",
+   "-g",
+   "-I/usr/include/tirpc",
+   "-c",
+   "-o",
+   "hello_svc.o",
+   "hello_svc.c"
+  ],
+  "file": "hello_svc.c"
+ },
+ {
+  "directory": "/home/ss0/rpc_hello",
+  "arguments": [
+   "cc",
+   "-g",
+   "-I/usr/include/tirpc",
+   "-c",
+   "-o",
+   "hello_server.o",
+   "hello_server.c"
+  ],
+  "file": "hello_server.c"
+ }
+]
