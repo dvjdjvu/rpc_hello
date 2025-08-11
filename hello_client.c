@@ -7,38 +7,38 @@
 #include "hello.h"
 
 void helloprog_1(char *host) {
-  CLIENT *clnt;
-  str_t *result_1;
-  char *hello_world_1_arg;
+    CLIENT *clnt;
+    str_t *result_1;
+    char *hello_world_1_arg;
 
 #ifndef DEBUG
-  clnt = clnt_create(host, HELLOPROG, HELLOVERS, "udp");
-  if (clnt == NULL) {
-    clnt_pcreateerror(host);
-    exit(1);
-  }
+    clnt = clnt_create(host, HELLOPROG, HELLOVERS, "udp");
+    if (clnt == NULL) {
+        clnt_pcreateerror(host);
+        exit(1);
+    }
 #endif /* DEBUG */
 
-  result_1 = hello_world_1((void *)&hello_world_1_arg, clnt);
-  if (result_1 == (str_t *)NULL) {
-    clnt_perror(clnt, "call failed");
-  }
+    result_1 = hello_world_1((void *) &hello_world_1_arg, clnt);
+    if (result_1 == (str_t *) NULL) {
+        clnt_perror(clnt, "call failed");
+    }
 
-  printf("client: %s\n", result_1->buf.buf_val);
+    printf("client: %s\n", result_1->buf.buf_val);
 
 #ifndef DEBUG
-  clnt_destroy(clnt);
+    clnt_destroy(clnt);
 #endif /* DEBUG */
 }
 
 int main(int argc, char *argv[]) {
-  char *host;
+    char *host;
 
-  if (argc < 2) {
-    printf("usage: %s server_host\n", argv[0]);
-    exit(1);
-  }
-  host = argv[1];
-  helloprog_1(host);
-  exit(0);
+    if (argc < 2) {
+        printf("usage: %s server_host\n", argv[0]);
+        exit(1);
+    }
+    host = argv[1];
+    helloprog_1(host);
+    exit(0);
 }

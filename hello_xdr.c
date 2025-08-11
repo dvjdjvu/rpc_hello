@@ -6,22 +6,20 @@
 #include "hello.h"
 
 bool_t
-xdr_str_t (XDR *xdrs, str_t *objp)
-{
-	register int32_t *buf;
+xdr_str_t(XDR *xdrs, str_t *objp) {
+    register int32_t *buf;
 
-	 if (!xdr_str_s (xdrs, objp))
-		 return FALSE;
-	return TRUE;
+    if (!xdr_str_s(xdrs, objp))
+        return FALSE;
+    return TRUE;
 }
 
 bool_t
-xdr_str_s (XDR *xdrs, str_s *objp)
-{
-	register int32_t *buf;
+xdr_str_s(XDR *xdrs, str_s *objp) {
+    register int32_t *buf;
 
-	 if (!xdr_array (xdrs, (char **)&objp->buf.buf_val, (u_int *) &objp->buf.buf_len, ~0,
-		sizeof (char), (xdrproc_t) xdr_char))
-		 return FALSE;
-	return TRUE;
+    if (!xdr_array(xdrs, (char **) &objp->buf.buf_val, (u_int * ) & objp->buf.buf_len, ~0,
+                   sizeof(char), (xdrproc_t) xdr_char))
+        return FALSE;
+    return TRUE;
 }
